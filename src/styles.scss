@@ -9,3 +9,18 @@ h6,
 p {
     margin: 0;
 }
+body{
+    font-family: 'Inter', sans-serif;
+    max-width: 1440px;
+    margin: auto;
+    background: #fff;
+    border-right: 1px solid #DBDBDB;
+    border-left: 1px solid #DBDBDB;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Ensure the body takes the full width */
+}
+  
