@@ -17,6 +17,7 @@
         font-weight: 600;
         font-size: 20px;
         border-bottom: 1px solid #DBDBDB;
+        height: 55px !important;
         div{
             span{
                 color: #0D062D;
@@ -45,11 +46,13 @@
             cursor: pointer;
         }
         li:hover{
-            background: #5030E514;
+
+            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);            color: #fff;
             border-radius: 5px;
         }
         .active{
-            background: #5030E514;
+
+            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);            color: #fff;
             border-radius: 5px;
         }
     }

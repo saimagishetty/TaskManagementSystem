@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  currentTime: any;
+  private subscription: any;
+
+  ngOnInit() {
+    this.currentTime = new Date();
+    this.subscription = setInterval(() => {
+      this.currentTime = new Date();
+    }, 1000);
+  }
+
 }

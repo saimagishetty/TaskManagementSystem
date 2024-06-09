@@ -1,3 +1,24 @@
 <nav>
-    <div>WellCome, Saikumar asdfghjasdfghjasdfghjksdfghjwertyu</div>
+    <!-- <div><span>WellCome,</span>Saikumar</div> -->
+     <div class="left">
+        <div class="searchBox">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for anything...">
+        </div>
+     </div>
+    <div class="right">
+        <div class="time">
+            {{ currentTime | date:'h:mm:ss a' }} -
+            {{ currentTime | date:'EEEE, MMMM d, yyyy' }}
+        </div>
+        <i class="fa-regular fa-bell"></i>
+        <div class="user">
+            <div class="text">
+                <div>Saikumar M</div>
+                <div>Hyd,India</div>
+            </div>
+            <img src="../../../assets/images/users/image.png" alt="">
+            <i class="fa-solid fa-angle-down"></i>
+        </div>
+    </div>
 </nav>

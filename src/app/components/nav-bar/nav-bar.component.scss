@@ -1,9 +1,93 @@
-nav{
-    max-width: 1200px !important;
-    min-width: 100%;
-    background: #ae7f7f;
-    border-bottom: 1px solid #DBDBDB;  
-    padding: 20px;
-    background-size: cover; /* Or adjust as needed */
-    box-sizing: border-box;    /* Ensures padding and border are included in the element's total width and height */
+nav {
+    background: #fff;
+    ;
+    position: fixed;
+    z-index: 9998;
+    width: 100%;
+    max-width: calc(100vw - 220px);
+    top: 0px;
+    left: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DBDBDB;
+    padding: 10px 30px 10px 20px;
+    background-size: cover;
+    box-sizing: border-box;
+    height: 55px !important;
+
+    div:nth-child(1) {
+        font-weight: 400;
+        font-size: 16px;
+        color: #0D062D;
+
+        span {
+            font-size: 14px;
+            color: #787486;
+            padding: 0 10px 0 20px;
+        }
+    }
+
+    .left {
+        .searchBox {
+            background: #f7f7f7;
+            border-radius: 2px;
+            display: flex;
+            padding: 8px;
+            align-items: center;
+            gap: 6px;
+            width: 400px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #787486;
+
+            input {
+                all: unset;
+                width: 100%;
+                background: #f7f7f7;
+                border: none;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        .fa-bell {
+            font-size: 28px;
+        }
+
+        .time {
+            font-size: 14px;
+            color: #0D062D;
+        }
+
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+            }
+
+            .text {
+                text-align: right;
+                font-weight: 400;
+                font-size: 16px;
+                color: #0D062D;
+                padding-right: 10px;
+
+                div:nth-child(2) {
+                    font-size: 14px;
+                    color: #787486;
+                }
+            }
+        }
+    }
 }
