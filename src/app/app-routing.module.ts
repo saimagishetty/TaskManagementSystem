@@ -12,10 +12,10 @@ const routes: Routes = [
     children: [
           { path: '', component: DashboardComponent }, 
           { path: 'Dashboard', component: DashboardComponent }, 
-          { path: 'kanbanBoard', component: KanbanBoardComponent },
+          { path: 'KanbanBoard', component: KanbanBoardComponent },
           { path: 'Projects', component: ProjectsComponent },
-          { path: 'users', component: UsersComponent },  
-          { path: 'settings', component: SettingsComponent }, 
+          { path: 'Users', component: UsersComponent },  
+          { path: 'Settings', component: SettingsComponent }, 
           // { path: ':id', component: ProductDetailComponent }, 
         ]
    }, 

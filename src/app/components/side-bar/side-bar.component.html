@@ -2,31 +2,12 @@
     <div class="logo">
         <div>
             <span>Magishetty</span>
-            <!-- <span>M</span> -->
         </div>
-        <!-- <i class="fa-solid fa-angles-left"></i> -->
-        <!-- <i class="fa-solid fa-angles-left"></i> -->
     </div>
     <ul>
-        <li class="active" routerLink="Dashboard">
-            <i class="fa-solid fa-house-chimney"></i>
-            <span>Home</span>
-        </li>
-        <li routerLink="kanbanBoard">
-            <i class="fa-solid fa-tv"></i>
-            <span>Kanban Board</span>
-        </li>
-        <li routerLink="Projects">
-            <i class="fa-solid fa-diagram-project"></i>
-            <span>Projects</span>
-        </li>
-        <li routerLink="users">
-            <i class="fa-solid fa-user-group"></i>
-            <span>Users</span>
-        </li>
-        <li routerLink="settings">
-            <i class="fa-solid fa-gear"></i>
-            <span>Settings</span>
+        <li *ngFor="let a of items;let i = index" [ngClass]="{'active': current==i}" [routerLink]="a.url">
+            <i [class]="a.icon"></i>
+            <span>{{a.name}}</span>
         </li>
     </ul>
 </section>

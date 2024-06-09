@@ -27,7 +27,7 @@ export class DashboardComponent {
         data: {
           labels: ['To Do Tickets', 'Progress Tickets','Done Tickets'],
           datasets: [{
-            data: [40, 90,55],
+            data: [69, 46, 93,],
             backgroundColor: ['#5030E5','#FFA500','#8BC48A'],
             borderColor: '#fff',
           }]
