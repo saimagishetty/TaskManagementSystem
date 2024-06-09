@@ -1,9 +1,12 @@
 section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 20px;
     .firstrow {
         width: 1220px !important;
         width: 100% !important;
         display: flex;
-        padding: 30px 20px;
+        padding: 30px 20px 10px 20px;
         flex-wrap: wrap;
         gap: 10px;
         justify-content: space-between;
@@ -73,6 +76,42 @@ section {
 
         i {
             font-size: 22px;
+        }
+    }
+    .char1{
+        height: 450px;
+        width: 400px;
+        background: #fff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        div{
+            padding: 10px;
+            border-bottom: 1px solid #DBDBDB;
+            font-weight: 700;
+            font-size: 24px;
+            color: #1B2559;
+        }
+        canvas{
+            padding: 10px;
+        }
+    }
+    .char2{
+        height: 450px;
+        width: 700px;
+        background: #fff;
+        border-radius: 10px;
+        box-sizing: border-box;
+        margin-left: 20px;
+        div{
+            padding: 10px;
+            border-bottom: 1px solid #DBDBDB;
+            font-weight: 700;
+            font-size: 24px;
+            color: #1B2559;
+        }
+        canvas{
+            padding: 10px;
         }
     }
 }

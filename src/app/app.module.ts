@@ -9,6 +9,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
+import { ProjectsComponent } from './components/projects/projects.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { KanbanBoardComponent } from './components/kanban-board/kanban-board.com
     NavBarComponent,
     DashboardComponent,
     SettingsComponent,
-    KanbanBoardComponent
+    KanbanBoardComponent,
+    ProjectsComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
