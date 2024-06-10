@@ -5,7 +5,8 @@
         </div>
     </div>
     <ul>
-        <li *ngFor="let a of items;let i = index" [ngClass]="{'active': current==i}" [routerLink]="a.url">
+        <li *ngFor="let a of items;let i = index" [ngClass]="{'active': current==i}"
+         [routerLink]="a.url">
             <i [class]="a.icon"></i>
             <span>{{a.name}}</span>
         </li>
