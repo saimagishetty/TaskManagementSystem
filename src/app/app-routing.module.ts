@@ -8,17 +8,17 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent,
+  { path: 'TaskManagementSystem', component: MainComponent,
     children: [
-          { path: '', component: DashboardComponent }, 
           { path: 'Dashboard', component: DashboardComponent }, 
           { path: 'KanbanBoard', component: KanbanBoardComponent },
           { path: 'Projects', component: ProjectsComponent },
           { path: 'Users', component: UsersComponent },  
           { path: 'Settings', component: SettingsComponent }, 
-          // { path: ':id', component: ProductDetailComponent }, 
         ]
-   }, 
+   },
+   { path: '**', redirectTo: '/TaskManagementSystem/Dashboard' } 
+
 ];
 
 @NgModule({

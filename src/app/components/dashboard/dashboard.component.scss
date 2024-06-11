@@ -3,7 +3,8 @@ section {
     flex-wrap: wrap;
     gap: 20px 20px;
     .firstrow {
-        width: 1220px !important;
+        max-width: 1220px !important;
+        margin: auto;
         width: 100% !important;
         display: flex;
         padding: 30px 20px 10px 20px;
@@ -21,6 +22,10 @@ section {
             gap: 20px;
             align-items: center;
             padding: 0 20px;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1),  /* Left shadow */
+            10px 0 10px rgba(0, 0, 0, 0.1),  /* Right shadow */
+            0 10px 10px rgba(0, 0, 0, 0.1),  /* Bottom shadow */
+            0 -10px 10px rgba(0, 0, 0, 0.1); /* Top shadow */
 
             .icon {
                 display: flex;
@@ -85,6 +90,10 @@ section {
         border-radius: 10px;
         box-sizing: border-box;
         margin-left: 20px;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1),  /* Left shadow */
+            10px 0 10px rgba(0, 0, 0, 0.1),  /* Right shadow */
+            0 10px 10px rgba(0, 0, 0, 0.1),  /* Bottom shadow */
+            0 -10px 10px rgba(0, 0, 0, 0.1); /* Top shadow */
         div{
             padding: 10px;
             border-bottom: 1px solid #DBDBDB;
@@ -103,6 +112,10 @@ section {
         border-radius: 10px;
         box-sizing: border-box;
         margin-left: 20px;
+        box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1),  /* Left shadow */
+            10px 0 10px rgba(0, 0, 0, 0.1),  /* Right shadow */
+            0 10px 10px rgba(0, 0, 0, 0.1),  /* Bottom shadow */
+            0 -10px 10px rgba(0, 0, 0, 0.1); /* Top shadow */
         div{
             padding: 10px;
             border-bottom: 1px solid #DBDBDB;

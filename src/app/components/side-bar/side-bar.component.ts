@@ -9,43 +9,37 @@ import { Router } from '@angular/router';
 export class SideBarComponent {
 
   constructor(private router: Router) {
-    let _url = this.router.url.split('/')[1];
-    this.current = this.items.findIndex(item => item.url === _url);
   }
 
   current: any
   items = [
     {
-      url: "Dashboard",
+      url: "/TaskManagementSystem/Dashboard",
       icon: "fa-solid fa-house-chimney",
       name: "Home"
     },
     {
-      url: "KanbanBoard",
+      url: "/TaskManagementSystem/KanbanBoard",
       icon: "fa-solid fa-tv",
       name: "KanbanBoard"
     },
     {
-      url: "Projects",
+      url: "/TaskManagementSystem/Projects",
       icon: "fa-solid fa-diagram-project",
       name: "Projects"
     },
     {
-      url: "Users",
+      url: "/TaskManagementSystem/Users",
       icon: "fa-solid fa-user-group",
       name: "Users"
     },
     {
-      url: "Settings",
+      url: "/TaskManagementSystem/Settings",
       icon: "fa-solid fa-gear",
       name: "Settings"
     }
 
   ]
-  ngDoCheck() {
-    let _url = this.router.url.split('/')[1];
-    this.current = this.items.findIndex(item => item.url === _url);
-  }
 
 
 
