@@ -1,0 +1,76 @@
+section {
+    padding: 35px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #4A85F6;
+    }
+
+    .user-row {
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1000px;
+
+        .searchBox {
+            color: #404040 !important;
+            padding: 10px;
+            border-radius: 10px;
+            width: 350px !important;
+        }
+
+        .Add-button {
+            button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                border: none;
+                width: 150px;
+                height: 35px;
+                border-radius: 5px;
+                background: #4A85F6;
+                color: #FFFFFF;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .card {
+        div {
+            font-size: 17px;
+            font-weight: 600;
+            color: #222B45;
+        }
+
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #F7f7f7;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+        table {
+            padding-top:20px ;
+            width: 100%;
+            thead{
+                background: #EFF4FA;
+            }
+            th,
+            td {
+                text-align: start;
+                padding: 3px 10px;
+            }
+            tbody{
+                tr:hover{
+                    background: #f7f7f7;
+                }
+            }
+
+        }
+
+
+    }
+}
