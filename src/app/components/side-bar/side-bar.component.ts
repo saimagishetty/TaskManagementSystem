@@ -37,18 +37,8 @@ export class SideBarComponent {
       url: "/TaskManagementSystem/Settings",
       icon: "fa-solid fa-gear",
       name: "Settings"
-    },
-    {
-      url: "/TaskManagementSystem/other",
-      icon: "fa-solid fa-other",
-      name: "other"
     }
-
   ]
-
-
-
-
   ngOnInit() {
   }
 }

@@ -19,65 +19,60 @@
         </div>
     </div>
     <div class="cards">
-        <div class="card">
+        <div class="card" (dragover)="onDragOver($event)" (drop)="onDrop($event,'open')">
             <div class="card-top">
                 <div></div>
                 <div>To Do</div>
-                <div>4</div>
+                <div>{{countColoum('open')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket">
-                    <div class="low">Low</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
-                    <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
-                </div>
-                <div class="ticket">
-                    <div class="high">high</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
-                    <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
-                </div>
-                <div class="ticket">
-                    <div class="low">Low</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
+                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('open')"
+                (dragstart)="onDragStart(a)">
+                    <div  [ngClass]="{
+                        'low': a.priority=='low',
+                        'medium': a.priority=='medium',
+                        'high': a.priority=='high'
+                      }"class="low">{{a.priority}}</div>
+                    <div>{{a.title}}</div>
+                    <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" (dragover)="onDragOver($event)" (drop)="onDrop($event,'in progress')">
             <div class="card-top second-card">
                 <div></div>
                 <div>On Progress</div>
-                <div>3</div>
+                <div>{{countColoum('in progress')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket">
-                    <div class="low">Low</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
-                    <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
-                </div>
-                <div class="ticket">
-                    <div class="high">high</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
+                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('in progress')"
+                (dragstart)="onDragStart(a)">
+                <div  [ngClass]="{
+                    'low': a.priority=='low',
+                    'medium': a.priority=='medium',
+                    'high': a.priority=='high'
+                  }"class="low">{{a.priority}}</div>                    <div>{{a.title}}</div>
+                    <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
                 </div>
             </div>
         </div>
-        <div class="card">
+        <div class="card" (dragover)="onDragOver($event)" (drop)="onDrop($event,'completed')">
             <div class="card-top third-card">
                 <div></div>
                 <div>Done</div>
-                <div>2</div>
+                <div>{{countColoum('completed')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket">
-                    <div class="low">Low</div>
-                    <div>Brainstorming</div>
-                    <div>Brainstorming brings team members' diverse experience into play. </div>
+                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('completed')"
+                (dragstart)="onDragStart(a)">
+                <div  [ngClass]="{
+                    'low': a.priority=='low',
+                    'medium': a.priority=='medium',
+                    'high': a.priority=='high'
+                  }"class="low">{{a.priority}}</div>                    <div>{{a.title}}</div>
+                    <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
                 </div>
             </div>

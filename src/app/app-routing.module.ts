@@ -6,7 +6,6 @@ import { KanbanBoardComponent } from './components/kanban-board/kanban-board.com
 import { SettingsComponent } from './components/settings/settings.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { UsersComponent } from './components/users/users.component';
-import { OtherComponent } from './components/other/other.component';
 
 const routes: Routes = [
   { path: 'TaskManagementSystem', component: MainComponent,
@@ -16,7 +15,6 @@ const routes: Routes = [
           { path: 'Projects', component: ProjectsComponent },
           { path: 'Users', component: UsersComponent },  
           { path: 'Settings', component: SettingsComponent }, 
-          { path: 'other', component: OtherComponent } 
         ]
    },
    { path: '**', redirectTo: '/TaskManagementSystem/Dashboard' } 

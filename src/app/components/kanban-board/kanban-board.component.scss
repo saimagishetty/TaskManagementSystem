@@ -78,13 +78,14 @@
     .cards {
         padding-top: 50px;
         display: flex;
-        gap: 30px;
-        justify-content: space-between;
+        gap: 20px;
+        justify-content: start;
         align-items: start;
+        height: 100% !important;
 
         .card {
             width: 300px;
-            height: 100%;
+            height: 100% !important;
             min-height: 650px;
             border-radius: 16px 16px 0 0;
             background: #f7f7f7;
@@ -175,6 +176,21 @@
                         color: #D58D49;
 
                     }
+                    .medium {
+                        height: 25px;
+                        border-radius: 4px;
+                        width: fit-content;
+                        padding: 0 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: Inter;
+                        font-size: 12px;
+                        font-weight: 500;
+                        background: #6D687533;
+                        color: #6D6875;
+                    }
+                    
                     .high {
                         height: 25px;
                         border-radius: 4px;
