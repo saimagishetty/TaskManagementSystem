@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { UsersComponent } from './components/users/users.component';
+import { OtherComponent } from './components/other/other.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { UsersComponent } from './components/users/users.component';
     SettingsComponent,
     KanbanBoardComponent,
     ProjectsComponent,
-    UsersComponent
+    UsersComponent,
+    OtherComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

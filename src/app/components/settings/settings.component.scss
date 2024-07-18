@@ -1,0 +1,51 @@
+section {
+    padding: 35px;
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+        color: #4A85F6;
+    }
+
+
+    .card {
+        div {
+            font-size: 17px;
+            font-weight: 600;
+            color: #222B45;
+        }
+
+        margin-top: 20px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid #F7f7f7;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
+        .tabs {
+            width: 100%;
+          }
+          
+          .tab-header {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+          }
+          
+          .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+          }
+          
+          .tab.active {
+            border-bottom: 2px solid #007bff;
+            font-weight: bold;
+          }
+          
+          .tab-content {
+            padding: 20px;
+          }
+          
+
+
+    }
+}

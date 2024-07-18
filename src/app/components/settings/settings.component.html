@@ -1,1 +1,32 @@
-<p>settings works!</p>
+<section>
+    <h2>Settings</h2>
+    <div class="card">
+        <div class="tabs">
+            <div class="tab-header">
+              <div
+                *ngFor="let tab of tabs; let i = index"
+                (click)="selectTab(i)"
+                [class.active]="selectedTab === i"
+                class="tab"
+              >
+                {{ tab.title }}
+              </div>
+            </div>
+            <div class="tab-content">
+              <ng-container *ngIf="selectedTab !== null">
+                <div *ngIf="selectedTab === 0">
+                  <ng-content select="[tab1]"></ng-content>
+                </div>
+                <div *ngIf="selectedTab === 1">
+                  <ng-content select="[tab2]"></ng-content>
+                </div>
+                <div *ngIf="selectedTab === 2">
+                  <ng-content select="[tab3]"></ng-content>
+                </div>
+                <!-- Add more tabs as needed -->
+              </ng-container>
+            </div>
+          </div>
+          
+    </div>
+</section>
