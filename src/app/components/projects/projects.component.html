@@ -6,7 +6,7 @@
             <input type="text" placeholder="Search...">
         </div>
         <div class="Add-button">
-            <button>
+            <button (click)="modal.openModal()">
                 <span>Add Project</span>
                 <i class="fa-solid fa-plus"></i>
             </button>
@@ -58,3 +58,4 @@
         </table>
     </div>
 </section>
+<app-add-project #modal></app-add-project>

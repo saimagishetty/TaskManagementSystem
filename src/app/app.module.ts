@@ -12,6 +12,8 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { UsersComponent } from './components/users/users.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { UsersComponent } from './components/users/users.component';
     SettingsComponent,
     KanbanBoardComponent,
     ProjectsComponent,
-    UsersComponent
+    UsersComponent,
+    AddProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

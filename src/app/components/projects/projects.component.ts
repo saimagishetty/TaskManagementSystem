@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { AddProjectComponent } from '../add-project/add-project.component';
 
 @Component({
   selector: 'app-projects',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
+  @ViewChild('modal') modal!: AddProjectComponent; 
+
 
 }

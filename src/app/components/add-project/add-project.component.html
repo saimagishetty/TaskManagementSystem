@@ -1,0 +1,43 @@
+<!-- modal.component.html -->
+<div class="modal" [ngClass]="{'show': isVisible}" (click)="closeModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="container">
+            <h2>Add Project</h2>
+            <hr>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <div class="form-data">
+                    <div class="form-input">
+                        <input id="name" type="text" placeholder="Name" formControlName="name" class="form-control" />
+                        <label for="name">Name</label>
+                        <div *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched" class="error">
+                            <small *ngIf="myForm.controls['name'].errors?.required">Name is required</small>
+                            <small *ngIf="myForm.controls['name'].errors?.minlength">Name must be at least 3 characters
+                                long</small>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <input id="email" type="email" placeholder="email" formControlName="email" class="form-control" />
+                        <label for="email">Email</label>
+                        <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched" class="error">
+                            <small *ngIf="myForm.controls['email'].errors?.required">Email is required</small>
+                            <small *ngIf="myForm.controls['email'].errors?.email">Invalid email format</small>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" formControlName="password" class="form-control" />
+                        <div *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched"
+                            class="error">
+                            <small *ngIf="myForm.controls['password'].errors?.required">Password is required</small>
+                            <small *ngIf="myForm.controls['password'].errors?.minlength">Password must be at least 6
+                                characters long</small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
