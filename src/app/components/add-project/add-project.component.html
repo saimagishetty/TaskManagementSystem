@@ -1,43 +1,79 @@
 <!-- modal.component.html -->
 <div class="modal" [ngClass]="{'show': isVisible}" (click)="closeModal($event)">
     <div class="modal-content" (click)="$event.stopPropagation()">
-        <div class="container">
-            <h2>Add Project</h2>
-            <hr>
-            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-                <div class="form-data">
-                    <div class="form-input">
-                        <input id="name" type="text" placeholder="Name" formControlName="name" class="form-control" />
-                        <label for="name">Name</label>
-                        <div *ngIf="myForm.controls['name'].invalid && myForm.controls['name'].touched" class="error">
-                            <small *ngIf="myForm.controls['name'].errors?.required">Name is required</small>
-                            <small *ngIf="myForm.controls['name'].errors?.minlength">Name must be at least 3 characters
-                                long</small>
+        <section action="#" class="container">
+            <h1 class="title">Add New Project</h1>
+            <div class="content">
+                <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Project Name</span>
+                            <input formControlName="projectName" type="text" placeholder="Enter your Project Name"
+                                required>
+                            <div
+                                *ngIf="(projectForm.get('projectName').invalid && projectForm.get('projectName').touched)">
+                                <small *ngIf="(projectForm.get('projectName').errors.required) ">Project Name is
+                                    required.</small>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-input">
-                        <input id="email" type="email" placeholder="email" formControlName="email" class="form-control" />
-                        <label for="email">Email</label>
-                        <div *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched" class="error">
-                            <small *ngIf="myForm.controls['email'].errors?.required">Email is required</small>
-                            <small *ngIf="myForm.controls['email'].errors?.email">Invalid email format</small>
+                        <div class="input-box">
+                            <span class="details">Team Size</span>
+                            <input formControlName="teamSize" type="number" placeholder="Enter your Team Size">
                         </div>
-                    </div>
-                    <div class="form-input">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" formControlName="password" class="form-control" />
-                        <div *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched"
-                            class="error">
-                            <small *ngIf="myForm.controls['password'].errors?.required">Password is required</small>
-                            <small *ngIf="myForm.controls['password'].errors?.minlength">Password must be at least 6
-                                characters long</small>
+                        <div class="input-box">
+                            <span class="details">Client Name</span>
+                            <input formControlName="clientName" type="text" placeholder="Enter your Client Name">
+                            <div *ngIf="projectForm.get('clientName').invalid && projectForm.get('clientName').touched">
+                                <small *ngIf="projectForm.get('clientName').errors.required">Client Name is
+                                    required.</small>
+                            </div>
                         </div>
+                        <div class="input-box">
+                            <span class="details">Client Email</span>
+                            <input formControlName="clientEmail" type="email" placeholder="Enter your Client Email">
+                            <div
+                                *ngIf="projectForm.get('clientEmail').invalid && projectForm.get('clientEmail').touched">
+                                <small *ngIf="projectForm.get('clientEmail').errors.required">Client Email is
+                                    required.</small>
+                                <small *ngIf="projectForm.get('clientEmail').errors.email">Invalid email format.</small>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Client Contact</span>
+                            <input formControlName="clientContact" type="number"
+                                placeholder="Enter your Client Contact">
+                            <div
+                                *ngIf="projectForm.get('clientContact').invalid && projectForm.get('clientContact').touched">
+                                <small *ngIf="projectForm.get('clientContact').errors.required">Client Contact is
+                                    required.</small>
+                                <small *ngIf="projectForm.get('clientContact').errors.pattern">Client Contact must be a
+                                    number.</small>
+                            </div>
+                        </div>
+                        <div class="gender-details">
+                            <span class="details">Project Status :</span>
+                            <select formControlName="projectStatus">
+                                <option value="">--Select --</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                            <div
+                                *ngIf="projectForm.get('projectStatus').invalid && projectForm.get('projectStatus').touched">
+                                <small *ngIf="projectForm.get('projectStatus').errors.required">Project Status is
+                                    required.</small>
+                            </div>
+                        </div>
+                        <div class="input-box textarea-box">
+                            <span class="details">Description</span>
+                            <textarea formControlName="description" rows="5"></textarea>
+                        </div>
+                        <!-- <div > -->
+                        <button  class="button" [ngClass]="{'button-disable': projectForm.invalid}" type="submit"
+                            [disabled]="projectForm.invalid">Register</button>
+                        <!-- </div> -->
                     </div>
-                </div>
-                <div>
-                    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </section>
     </div>
 </div>

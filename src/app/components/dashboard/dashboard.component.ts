@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Chart } from 'chart.js/auto';
-
-
-
+import { ProjectService } from 'src/app/Services/Project-Services/project.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,10 +9,15 @@ import { Chart } from 'chart.js/auto';
 })
 export class DashboardComponent {
 
+  projectsList:any
 
-  constructor() { }
+  constructor(
+    private ProjectService: ProjectService
+  ) { }
 
   ngOnInit(): void {
+    this.projectsList = this.ProjectService.getProjects()
+    console.log(this.projectsList);
     this.createPieChart();
     this.createBarChart();
   }

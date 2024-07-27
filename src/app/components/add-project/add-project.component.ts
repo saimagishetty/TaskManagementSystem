@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ProjectService } from 'src/app/Services/Project-Services/project.service';
 
 @Component({
   selector: 'app-add-project',
@@ -10,21 +11,39 @@ export class AddProjectComponent {
   isVisible = false;
   myForm: any;
 
-  constructor(private fb: FormBuilder) {
-    this.myForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+  projectForm: any;
+  @Output() close = new EventEmitter<void>();
+  @Input() editData:any
+
+
+  constructor(private fb: FormBuilder,
+    private ProjectService: ProjectService
+  ) { }
+
+  ngOnInit(): void {
+    this.projectForm = this.fb.group({
+      _id: [0],
+      projectName: ['', Validators.required],
+      teamSize: [''],
+      clientName: ['', Validators.required],
+      clientEmail: ['', [Validators.required, Validators.email]],
+      clientContact: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      projectStatus: ['', Validators.required],
+      description: ['']
     });
   }
-
-  ngOnInit(): void {}
+  ngOnChanges(){
+    console.log(this.editData);
+    if(this.editData){
+      this.projectForm.patchValue(this.editData)
+    }
+  }
 
   onSubmit(): void {
-    if (this.myForm.valid) {
-      console.log('Form Submitted', this.myForm.value);
-    } else {
-      this.myForm.markAllAsTouched();
+    if (this.projectForm.valid) {
+      console.log(this.projectForm.value);
+      this.ProjectService.AddProject(this.projectForm.value)
+      this.onClose()
     }
   }
 
@@ -33,7 +52,13 @@ export class AddProjectComponent {
   }
 
   closeModal(event: any) {
-    this.myForm.reset()
+    this.projectForm.reset()
+    this.isVisible = false;
+  }
+
+  onClose() {
+    this.close.emit();
+    this.projectForm.reset()
     this.isVisible = false;
   }
 

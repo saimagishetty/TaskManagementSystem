@@ -7,6 +7,8 @@ export class DataService {
   taskData: any
   constructor() { }
 
+
+  
   Data() {
     const storedData = localStorage.getItem("task-data");
     if (storedData) {
@@ -22,7 +24,7 @@ export class DataService {
         let last_obj = task_Data[task_Data.length - 1]
         obj.id = Number(last_obj.id) + 1
       }
-      else{
+      else {
         obj.id = 1
       }
       task_Data.push(obj)

@@ -19,43 +19,25 @@
                 <tr>
                     <th>S.No</th>
                     <th>Project Name</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Status</th>
+                    <th>Client Name</th>
+                    <th>Team Size</th>
+                    <th>Project Status</th>
                     <th>Description</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Website Redesign</td>
-                    <td>2024-01-15</td>
-                    <td>2024-06-30</td>
-                    <td><span class="status in-progress">In Progress</span></td>
-                    <td>Redesigning the company.</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Mobile App Development</td>
-                    <td>2023-09-01</td>
-                    <td>2024-03-31</td>
-                    <td><span class="status completed">Completed</span></td>
-                    <td>Developing a mobile app .</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Marketing Campaign</td>
-                    <td>2024-02-01</td>
-                    <td>2024-04-30</td>
-                    <td><span class="status pending">Pending</span></td>
-                    <td>Launching a new marketing .</td>
-                    <td></td>
+                <tr *ngFor="let a of projectsList;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{a.projectName}}</td>
+                    <td>{{a.clientName}}</td>                    
+                    <td>{{a.teamSize}}</td>
+                    <td>{{a.projectStatus}}</td>
+                    <td>{{a.description}}</td>
+                    <td><i (click)="editData(a)" class="fa-solid fa-pen-to-square"></i></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </section>
-<app-add-project #modal></app-add-project>
+<app-add-project #modal [editData]="_editData" (close)="onModalClose()" ></app-add-project>

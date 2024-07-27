@@ -1,4 +1,4 @@
-.side-main{
+.side-main {
     width: 220px;
     height: 100vh;
     border-right: 1px solid #DBDBDB;
@@ -7,8 +7,8 @@
     left: 0;
     right: 0;
     z-index: 9999;
-    
-    .logo{
+
+    .logo {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -18,41 +18,51 @@
         font-size: 20px;
         border-bottom: 1px solid #DBDBDB;
         height: 55px !important;
-        div{
-            span{
+
+        div {
+            span {
                 color: #0D062D;
             }
         }
-        i{
+
+        i {
             color: #787486;
         }
+
         div:nth-child(1) {
             padding-left: 20px;
         }
     }
-    ul{
+
+    ul {
         font-weight: 500;
         font-size: 16px;
         color: #787486;
         padding: 10px;
         box-sizing: border-box;
-        li{
-            span{
+
+        li {
+            span {
                 padding-left: 15px;
             }
+
             margin: 5px 0;
             padding: 10px 15px;
             box-sizing: border-box;
             cursor: pointer;
         }
-        li:hover{
 
-            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);            color: #fff;
+        li:hover {
+
+            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);
+            color: #fff;
             border-radius: 5px;
         }
-        .active{
 
-            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);            color: #fff;
+        .active {
+
+            background: linear-gradient(135deg, #868CFF 0%, #4318FF 100%);
+            color: #fff;
             border-radius: 5px;
         }
     }
