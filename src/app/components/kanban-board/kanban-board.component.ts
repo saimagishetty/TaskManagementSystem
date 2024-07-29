@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/Services/dataservice/data.service';
 import { ProjectService } from 'src/app/Services/Project-Services/project.service';
+import { TicketService } from 'src/app/Services/Ticket-Services/ticket.service'; 
 
 @Component({
   selector: 'app-kanban-board',
@@ -13,41 +14,29 @@ export class KanbanBoardComponent {
   currentItem: any
   projectsList: any
   _Project_Id: any
-  _project:any
+  _project: any
 
   constructor(
     private dataService: DataService,
-    private ProjectService: ProjectService
+    private ProjectService: ProjectService,
+    private TicketService: TicketService
   ) {
     this.projectsList = this.ProjectService.getProjects()
-    this._project = this.ProjectService.projectId(this.defaultProject())
-    console.log(this._project);
-    this.defaultProject()
+    this._Project_Id = this.defaultProject()
   }
   modelView: any;
   modelOpen = false;
   priorityLevel = ""
   ngOnInit() {
     this._project = this.ProjectService.projectId(this.defaultProject())
-    console.log(this._project);
     if (this.priorityLevel.length == 0) {
-      this.data = this.dataService.Data();
+      this.data = this.TicketService.getTickets();
     }
     else {
-      let taskdata = this.dataService.Data();
+      let taskdata = this.TicketService.getTickets();
       this.data = this.filterTasksByPriority(taskdata, this.priorityLevel);
     }
     console.log(this.data);
-  }
-  openTask(e: any) {
-    this.modelOpen = true
-    this.modelView = e
-  }
-  receiveData(data: any) {
-    if (data) {
-      this.modelOpen = false
-      this.ngOnInit()
-    }
   }
   filterTickets(status: string) {
     return this.data.filter((m: any) => m.status == status);

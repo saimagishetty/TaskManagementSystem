@@ -31,7 +31,7 @@
                 <div>{{countColoum('open')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('open')"
+                <div class="ticket" draggable="true" *ngFor="let a of filterTickets('open')"
                     (dragstart)="onDragStart(a)">
                     <div [ngClass]="{
                         'low': a.priority=='low',
@@ -51,7 +51,7 @@
                 <div>{{countColoum('in progress')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket" (click)="openTask(a)" draggable="true"
+                <div class="ticket" draggable="true"
                     *ngFor="let a of filterTickets('in progress')" (dragstart)="onDragStart(a)">
                     <div [ngClass]="{
                     'low': a.priority=='low',
@@ -71,7 +71,7 @@
                 <div>{{countColoum('completed')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('completed')"
+                <div class="ticket" draggable="true" *ngFor="let a of filterTickets('completed')"
                     (dragstart)="onDragStart(a)">
                     <div [ngClass]="{
                     'low': a.priority=='low',
