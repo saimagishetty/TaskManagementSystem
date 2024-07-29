@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from 'src/app/Services/dataservice/data.service';
+import { ProjectService } from 'src/app/Services/Project-Services/project.service';
 
 @Component({
   selector: 'app-kanban-board',
@@ -9,24 +10,34 @@ import { DataService } from 'src/app/Services/dataservice/data.service';
 export class KanbanBoardComponent {
   columns = ["open", "in progress", "completed"]
   data: any
-  currentItem: any;
+  currentItem: any
+  projectsList: any
+  _Project_Id: any
+  _project:any
 
   constructor(
-    private dataService: DataService
-  ) { }
+    private dataService: DataService,
+    private ProjectService: ProjectService
+  ) {
+    this.projectsList = this.ProjectService.getProjects()
+    this._project = this.ProjectService.projectId(this.defaultProject())
+    console.log(this._project);
+    this.defaultProject()
+  }
   modelView: any;
   modelOpen = false;
-  priorityLevel=""
+  priorityLevel = ""
   ngOnInit() {
-    if(this.priorityLevel.length==0){
+    this._project = this.ProjectService.projectId(this.defaultProject())
+    console.log(this._project);
+    if (this.priorityLevel.length == 0) {
       this.data = this.dataService.Data();
     }
-    else{
+    else {
       let taskdata = this.dataService.Data();
-      this.data = this.filterTasksByPriority(taskdata,this.priorityLevel);
+      this.data = this.filterTasksByPriority(taskdata, this.priorityLevel);
     }
     console.log(this.data);
-    console.log(this.filterTasksByPriority(this.data,"high"));
   }
   openTask(e: any) {
     this.modelOpen = true
@@ -43,7 +54,7 @@ export class KanbanBoardComponent {
   }
   countColoum(status: string) {
     let x = this.data.filter((m: any) => m.status == status)
-    return x.length ;
+    return x.length;
   }
   onDragStart(item: any) {
     this.currentItem = item;
@@ -65,12 +76,22 @@ export class KanbanBoardComponent {
   onDragOver(event: any) {
     event.preventDefault();
   }
-  onOptionSelected(e:any){
-    this.priorityLevel=e.target.value
+  onOptionSelected(e: any) {
+    this.priorityLevel = e.target.value
     this.ngOnInit()
 
   }
-  filterTasksByPriority(tasks:any, priority:any) {
-    return tasks.filter((task:any) => task.priority === priority);
+  filterTasksByPriority(tasks: any, priority: any) {
+    return tasks.filter((task: any) => task.priority === priority);
+  }
+  defaultProject() {
+    this._Project_Id = localStorage.getItem('_Project_Id') || (this.ProjectService.getProjects())[0]._id;
+    localStorage.setItem('_Project_Id', this._Project_Id);
+    console.log(this._Project_Id);
+    return this._Project_Id
+  }
+  projectChanged(event: any): void {
+    localStorage.setItem('_Project_Id', this._Project_Id = event);
+    this.ngOnInit()
   }
 }

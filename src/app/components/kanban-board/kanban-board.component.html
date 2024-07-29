@@ -1,7 +1,12 @@
 <section class="board">
+    <div class="wrapper">
+        <select class="custom-select"  (ngModelChange)="projectChanged($event)" [(ngModel)]="_Project_Id">
+            <option class="select" *ngFor="let a of projectsList" [value]="a._id">{{a.projectName}}</option>
+        </select>
+    </div>
     <div class="row1">
         <div class="left">
-            <div class="text">Mobile App</div>
+            <div class="text">{{_project.projectName}}</div>
         </div>
         <div class="right">
             <div class="adduser">
@@ -26,13 +31,13 @@
                 <div>{{countColoum('open')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('open')"
-                (dragstart)="onDragStart(a)">
-                    <div  [ngClass]="{
+                <div class="ticket" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('open')"
+                    (dragstart)="onDragStart(a)">
+                    <div [ngClass]="{
                         'low': a.priority=='low',
                         'medium': a.priority=='medium',
                         'high': a.priority=='high'
-                      }"class="low">{{a.priority}}</div>
+                      }" class="low">{{a.priority}}</div>
                     <div>{{a.title}}</div>
                     <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
@@ -46,13 +51,14 @@
                 <div>{{countColoum('in progress')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('in progress')"
-                (dragstart)="onDragStart(a)">
-                <div  [ngClass]="{
+                <div class="ticket" (click)="openTask(a)" draggable="true"
+                    *ngFor="let a of filterTickets('in progress')" (dragstart)="onDragStart(a)">
+                    <div [ngClass]="{
                     'low': a.priority=='low',
                     'medium': a.priority=='medium',
                     'high': a.priority=='high'
-                  }"class="low">{{a.priority}}</div>                    <div>{{a.title}}</div>
+                  }" class="low">{{a.priority}}</div>
+                    <div>{{a.title}}</div>
                     <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
                 </div>
@@ -65,13 +71,14 @@
                 <div>{{countColoum('completed')}}</div>
             </div>
             <div class="tickets">
-                <div class="ticket"  (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('completed')"
-                (dragstart)="onDragStart(a)">
-                <div  [ngClass]="{
+                <div class="ticket" (click)="openTask(a)" draggable="true" *ngFor="let a of filterTickets('completed')"
+                    (dragstart)="onDragStart(a)">
+                    <div [ngClass]="{
                     'low': a.priority=='low',
                     'medium': a.priority=='medium',
                     'high': a.priority=='high'
-                  }"class="low">{{a.priority}}</div>                    <div>{{a.title}}</div>
+                  }" class="low">{{a.priority}}</div>
+                    <div>{{a.title}}</div>
                     <div>{{a.description}}</div>
                     <div><i class="fa-regular fa-comment-dots"></i> 12 comments</div>
                 </div>

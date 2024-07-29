@@ -1,7 +1,7 @@
 .board {
     // max-width: 1220px !important;
     // width: 100% !important;
-    padding: 50px;
+    padding: 20px 50px;
     box-sizing: border-box;
     background: #fff;
 
@@ -176,6 +176,7 @@
                         color: #D58D49;
 
                     }
+
                     .medium {
                         height: 25px;
                         border-radius: 4px;
@@ -190,7 +191,7 @@
                         background: #6D687533;
                         color: #6D6875;
                     }
-                    
+
                     .high {
                         height: 25px;
                         border-radius: 4px;
@@ -220,15 +221,17 @@
                         color: #787486;
 
                     }
+
                     div:nth-child(4) {
                         font-size: 12px;
                         font-weight: 500;
                         color: #787486;
-                        
+
 
                     }
                 }
-                .ticket:hover{
+
+                .ticket:hover {
                     box-shadow: 0px 44px 84px 6px #D8D9DB;
 
                 }
@@ -249,4 +252,36 @@
         // }
 
     }
+}
+
+.wrapper {
+    width: 600px;
+    box-shadow: 0px 44px 84px 6px #D8D9DB;
+    margin: 0 0  30px 0;
+}
+
+.custom-select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+    line-height: 1.1;
+    padding: 5px 20px;
+    color: #4D4E50;
+    border: 1.5px solid #E8E9EC;
+    border-radius: 3px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><polyline points="10,50 70,110 130,50" style="fill:none;stroke:%238B8C8F;stroke-width:15;stroke-linecap:round"/></svg>') no-repeat right 15px center;
+    background-size: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    margin: 0px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.custom-select:focus {
+    outline: none;
+    border-color: #007bff;
 }
