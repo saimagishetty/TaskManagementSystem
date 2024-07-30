@@ -14,6 +14,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { UsersComponent } from './components/users/users.component';
 import { AddProjectComponent } from './components/add-project/add-project.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     KanbanBoardComponent,
     ProjectsComponent,
     UsersComponent,
-    AddProjectComponent
+    AddProjectComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

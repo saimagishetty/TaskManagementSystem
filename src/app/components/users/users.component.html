@@ -1,64 +1,43 @@
 <section>
-    <h2>User Management</h2>
+    <h2>user Management</h2>
     <div class="user-row">
         <div class="searchBox">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" placeholder="Search...">
         </div>
         <div class="Add-button">
-            <button>
-                <span>Add User</span>
+            <button (click)="modal.openModal()">
+                <span>Add user</span>
                 <i class="fa-solid fa-plus"></i>
             </button>
         </div>
     </div>
     <div class="card">
-        <div>List of Projects</div>
+        <div>List of users</div>
         <table>
             <thead>
                 <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Age</th>
-                    <th>Country</th>
+                    <th>S.No</th>
+                    <th>user Name</th>
+                    <th>Client Name</th>
+                    <th>Team Size</th>
+                    <th>user Status</th>
+                    <th>Description</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>30</td>
-                    <td>USA</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>jane@example.com</td>
-                    <td>25</td>
-                    <td>Canada</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>30</td>
-                    <td>USA</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jane Smith</td>
-                    <td>jane@example.com</td>
-                    <td>25</td>
-                    <td>Canada</td>
-                    <td></td>
+                <tr *ngFor="let a of usersList;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{a.userName}}</td>
+                    <td>{{a.clientName}}</td>                    
+                    <td>{{a.teamSize}}</td>
+                    <td>{{a.userStatus}}</td>
+                    <td>{{a.description}}</td>
+                    <td><i (click)="editData(a)" class="fa-solid fa-pen-to-square"></i></td>
                 </tr>
             </tbody>
         </table>
     </div>
 </section>
+<app-add-user #modal [editData]="_editData" (close)="onModalClose()" ></app-add-user>

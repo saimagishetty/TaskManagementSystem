@@ -1,0 +1,79 @@
+<!-- modal.component.html -->
+<div class="modal" [ngClass]="{'show': isVisible}" (click)="closeModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <section action="#" class="container">
+            <h1 class="title">Add New user</h1>
+            <div class="content">
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">user Name</span>
+                            <input formControlName="userName" type="text" placeholder="Enter your user Name"
+                                required>
+                            <div
+                                *ngIf="(userForm.get('userName').invalid && userForm.get('userName').touched)">
+                                <small *ngIf="(userForm.get('userName').errors.required) ">user Name is
+                                    required.</small>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Team Size</span>
+                            <input formControlName="teamSize" type="number" placeholder="Enter your Team Size">
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Client Name</span>
+                            <input formControlName="clientName" type="text" placeholder="Enter your Client Name">
+                            <div *ngIf="userForm.get('clientName').invalid && userForm.get('clientName').touched">
+                                <small *ngIf="userForm.get('clientName').errors.required">Client Name is
+                                    required.</small>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Client Email</span>
+                            <input formControlName="clientEmail" type="email" placeholder="Enter your Client Email">
+                            <div
+                                *ngIf="userForm.get('clientEmail').invalid && userForm.get('clientEmail').touched">
+                                <small *ngIf="userForm.get('clientEmail').errors.required">Client Email is
+                                    required.</small>
+                                <small *ngIf="userForm.get('clientEmail').errors.email">Invalid email format.</small>
+                            </div>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Client Contact</span>
+                            <input formControlName="clientContact" type="number"
+                                placeholder="Enter your Client Contact">
+                            <div
+                                *ngIf="userForm.get('clientContact').invalid && userForm.get('clientContact').touched">
+                                <small *ngIf="userForm.get('clientContact').errors.required">Client Contact is
+                                    required.</small>
+                                <small *ngIf="userForm.get('clientContact').errors.pattern">Client Contact must be a
+                                    number.</small>
+                            </div>
+                        </div>
+                        <div class="gender-details">
+                            <span class="details">user Status :</span>
+                            <select formControlName="userStatus">
+                                <option value="">--Select --</option>
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+                            <div
+                                *ngIf="userForm.get('userStatus').invalid && userForm.get('userStatus').touched">
+                                <small *ngIf="userForm.get('userStatus').errors.required">user Status is
+                                    required.</small>
+                            </div>
+                        </div>
+                        <div class="input-box textarea-box">
+                            <span class="details">Description</span>
+                            <textarea formControlName="description" rows="5"></textarea>
+                        </div>
+                        <!-- <div > -->
+                        <button  class="button" [ngClass]="{'button-disable': userForm.invalid}" type="submit"
+                            [disabled]="userForm.invalid">Register</button>
+                        <!-- </div> -->
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
